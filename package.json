@@ -55,16 +55,15 @@
     "test": "istanbul cover -x \"**/*.test.js\" bin/test",
     "lint": "eslint . --cache",
     "docs": "node scripts/generate-readme.js",
-    "integration-test-cleanup": "node scripts/integration-test-cleanup.js",
-    "simple-integration-test": "jest --maxWorkers=5 simple-suite",
-    "complex-integration-test": "jest --maxWorkers=5 integration",
+    "simple-integration-test": "jest --maxWorkers=5 integration-simple",
+    "thorough-integration-test": "jest --maxWorkers=5 integration-thorough",
     "postinstall": "node ./scripts/postinstall.js"
   },
   "jest": {
     "testRegex": "(\\.|/)(tests)\\.js$",
     "testEnvironment": "node",
     "setupFilesAfterEnv": [
-      "<rootDir>/tests/setupTests.js"
+      "<rootDir>/tests/setup-tests.js"
     ]
   },
   "devDependencies": {
